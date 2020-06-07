@@ -1,0 +1,17 @@
+cn\mrray\raybaas\demo\config\RayBaasProperties$SslConfig.class
+cn\mrray\raybaas\demo\config\RayBaasConfig.class
+cn\mrray\raybaas\demo\web\BlockController.class
+cn\mrray\raybaas\demo\service\ContractService.class
+cn\mrray\raybaas\demo\DemoSpringbootApplication.class
+cn\mrray\raybaas\demo\config\RayBaasProperties$Channels.class
+cn\mrray\raybaas\demo\config\Swagger2Config.class
+cn\mrray\raybaas\demo\config\RayBaasProperties$ChannelAttribute.class
+cn\mrray\raybaas\demo\web\TestController.class
+cn\mrray\raybaas\demo\config\RayBaasProperties$Order.class
+cn\mrray\raybaas\demo\config\RayBaasProperties$App.class
+cn\mrray\raybaas\demo\config\RayBaasProperties$Peer.class
+cn\mrray\raybaas\demo\web\ContractController.class
+cn\mrray\raybaas\demo\config\RayBaasProperties.class
+cn\mrray\raybaas\demo\entity\Transfer.class
+cn\mrray\raybaas\demo\entity\User.class
+cn\mrray\raybaas\demo\config\ContractProperties.class

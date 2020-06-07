@@ -1,0 +1,16 @@
+contract\core\ContractImpl.class
+contract\CrossSdkCertContract.class
+contract\core\example\CopyrightContract$1.class
+contract\core\ContractCross.class
+contract\core\example\CopyrightContract$TestVO.class
+contract\htl\CurrencyA.class
+contract\core\ContractChain1.class
+contract\core\ContractChain2.class
+contract\htl\CurrencyB.class
+contract\core\example\CopyrightContract$Warrant.class
+contract\CrossSdkCertContract$CrossSdkCert.class
+contract\core\example\CopyrightContract$Copyright.class
+contract\core\example\CopyrightContract.class
+contract\core\example\CopyrightContract$GlobalCode.class
+contract\core\example\CopyrightContract$Account.class
+contract\systemcontract\ContractImpl.class

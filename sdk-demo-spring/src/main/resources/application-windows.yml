@@ -1,0 +1,60 @@
+spring:
+  servlet:
+    multipart:
+      enabled: true
+      file-size-threshold: 0
+      max-file-size: 1073741824MB
+      max-request-size: 1073741824MB
+  http:
+    encoding:
+      charset: UTF-8
+      enabled: true
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    serialization.write_dates_as_timestamps: true
+    time-zone: GMT+8
+
+server:
+  port: 8085
+
+logging:
+  config: classpath:logback.xml
+  level:
+    io.swagger.models.parameters.AbstractSerializableParameter: error
+
+worker:
+  id: 1
+
+# 4.1.7底层链测试环境
+raybaas:
+  contract:
+    demo:
+      identity: IntegralContract  # 合约标识
+      version: 1.0  # 合约版本
+      path: ./data/contract/ContractImpl.java # 合约代码路径
+        app:
+          appId: 179257578474176512 # 应用ID
+          privateKeyPath: ./data/private-key/sm2_private_179257578474176512.pfx # 证书路径
+  ssl:
+    sslMutual: false # gRPC双向验证
+    sslTrustCertFilePath: ./data/cert/tls/mutual/ca.crt # 根证书（可不配置）
+    sslCertFilePath: ./data/cert/tls/mutual/client.crt # 证书（可不配置）
+    sslPrivateKeyPath: ./data/cert/tls/mutual/client.pem # 私钥（可不配置）
+  #    sslTrustCertFilePath: # 根证书（可不配置）
+  #    sslCertFilePath:  # 证书（可不配置）
+  #    sslPrivateKeyPath:  # 私钥（可不配置）
+  channels:
+    channel[0]:
+      name: channel2 # 通道名称
+      consensus: kafka # 共识方式
+      order:
+        hostAndPort: 172.16.24.163:50000 # 共识节点，多个以“;”号分割，双向验证需要使用域名访问，如：192.168.125.12:51051;192.168.125.196:51054;192.168.125.14:51055;192.168.125.15:51054
+      peer:
+        hostAndPort: 172.16.24.163:50001 # 共识节点，多个以“;”号分割，双向验证需要使用域名访问
+#      channel[1]:
+#        name: mychannel2 #通道名称
+#        consensus: raft   # 共识方式
+#        order:
+#          hostAndPort: 192.168.125.14:50052 # 共识节点，多个以“;”号分割，双向验证需要使用域名访问，如：192.168.125.12:51051;192.168.125.196:51054;192.168.125.14:51055;192.168.125.15:51054
+#        peer:
+#          hostAndPort: 192.168.125.14:50053 # 共识节点，多个以“;”号分割，双向验证需要使用域名访问

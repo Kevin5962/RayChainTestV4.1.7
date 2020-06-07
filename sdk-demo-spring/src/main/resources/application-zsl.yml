@@ -1,0 +1,46 @@
+spring:
+  servlet:
+    multipart:
+      enabled: true
+      file-size-threshold: 0
+      max-file-size: 1073741824MB
+      max-request-size: 1073741824MB
+  http:
+    encoding:
+      charset: UTF-8
+      enabled: true
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    serialization.write_dates_as_timestamps: true
+    time-zone: GMT+8
+
+server:
+  port: 9999
+
+logging:
+  config: classpath:logback.xml
+  level:
+    io.swagger.models.parameters.AbstractSerializableParameter: error
+worker:
+  id: 1
+raybaas:
+  contract:
+    demo:
+      identity: amt-test # 合约标识
+      version: "1.0"     # 合约版本
+      path: E:/git_project/raybaas-demo/contract-demo-java/src/main/java/contract/core/ContractImpl.java # 合约代码路径
+  channel:
+    name: mychannel
+    consensus: kafka   # 共识方式
+  appId: 1182903106057273344 # 应用ID
+  privateKeyPath: E:/git_project/raybaas-demo/sdk-demo-spring/src/main/resources/data/sm2_private_1182903106057273344.pfx # 证书路径
+  ssl:
+    sslMutual: false
+    sslTrustCertFilePath: E:/Workspace/raychain/raybaas-demo/data/cert/tls/mutual/ca.crt # 根证书
+    sslCertFilePath: E:/Workspace/raychain/raybaas-demo/data/cert/tls/mutual/client.crt # 证书
+    sslPrivateKeyPath: E:/Workspace/raychain/raybaas-demo/data/cert/tls/mutual/client.pem #私钥
+  order:
+    #    hostAndPort: 192.168.125.12:51051;192.168.125.196:51054;192.168.125.14:51055;192.168.125.15:51054
+    hostAndPort: 192.168.125.12:51051 #双向验证需要使用域名访问
+  peer:
+    hostAndPort: 192.168.125.12:52051 #双向验证需要使用域名访问
